@@ -12,7 +12,7 @@ body {
 }
 
 .nav {
-	float: left;
+	position: fixed;
 	margin-top: -1.5em; /* corresponds to body's padding */
 	margin-left: -12em; /* corresponds to body's margin + padding */
 	padding: 0;
