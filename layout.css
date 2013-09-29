@@ -1,0 +1,39 @@
+html {
+	background-color: #181818; /* adapted from Pure website */
+}
+
+body {
+	margin: 1em 0 0 10em;
+	border-top-left-radius: 5px;
+	padding: 1.5em 2em;
+	background-color: #FFF;
+}
+
+.nav {
+	float: left;
+	margin-top: -1.5em; /* corresponds to body's padding */
+	margin-left: -12em; /* corresponds to body's margin + padding */
+	padding: 0;
+	list-style-type: none;
+	color: white;
+}
+.nav.pure-menu { /* overrides */
+	width: 10em;
+	border: none;
+	background-color: transparent;
+}
+
+.nav .pure-menu-heading {
+	margin-top: 0;
+	font-size: 110%;
+	color: #FFF;
+}
+
+.nav.pure-menu a {
+	color: #999;
+}
+.nav.pure-menu a:hover,
+.nav.pure-menu a:focus {
+	background-color: #333; /* adapted from Pure website */
+}
+
