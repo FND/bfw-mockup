@@ -7,20 +7,139 @@
 	<link rel="stylesheet" href="../tiddlywebplugins/bfw/assets/pure.css">
 	<link rel="stylesheet" href="layout.css">
 	<link rel="stylesheet" href="contents.css">
+	<link rel="stylesheet" href="mockup.css">
 </head>
 
 <body>
-	<ul class="nav pure-menu pure-menu-open">
-		<li><a href="#">edit page</a></li>
-		<li><a href="#">page history</a></li>
-		<li class="divided"><a href="#">home</a></li>
-		<li><a href="#">wiki history</a></li>
-		<li class="divided"><a href="#">dashboard</a></li>
-		<li><a href="#">recent changes</a></li>
-	</ul>
+	<ul class="nav pure-menu pure-menu-open"></ul>
 
-	<h1>Hello World</h1>
-	<p>lorem ipsum</p>
+	<script type="text/html" id="frontpage">
+		Barely Functioning Wiki
+		----
+		!home
+		dashboard*
+		recent changes
+		help
+		----
+		<p>Welcome to <a href="#help">BFW</a>.</p>
+		<p class="hint">these contents are read from <code>meta/index</code></p>
+
+		<aside>
+			<form action="#" class="pure-form">
+				<label>
+					username: <input type="text">
+				</label>
+				<label>
+					password: <input type="password">
+				</label>
+				<input type="submit" class="pure-button" value="Log in">
+				<input type="submit" class="pure-button pure-button-primary" value="Register">
+			</form>
+		</aside>
+	</script>
+	<script type="text/html" id="dashboard">
+		Dashboard
+		----
+		home
+		!dashboard
+		recent changes
+		help
+		----
+		<p>Welcome, johndoe.</p>
+		<p class="hint">these contents are read from <code>johndoe/index</code></p>
+
+		<aside>
+			<h3>Your Wikis</h3>
+			<ul>
+				<li><a href="#wiki-index">johndoe</a></li>
+				<li><a href="#wiki-index">alpha</a></li>
+				<li><a href="#wiki-index">bravo</a></li>
+			</ul>
+
+			<h3>Create Wiki</h3>
+			<form action="#" class="pure-form">
+				<label>
+					name: <input type="text">
+				</label>
+				<input type="submit" class="pure-button" value="Create">
+			</form>
+
+			<h3>Create Page</h3>
+			<form action="#" class="pure-form">
+				<label>
+					wiki:
+					<select>
+						<option>johndoe</option>
+						<option>alpha</option>
+						<option>bravo</option>
+					</select>
+				</label>
+				<label>
+					name: <input type="text">
+				</label>
+				<input type="submit" class="pure-button" value="Create">
+			</form>
+		</aside>
+	</script>
+	<script type="text/html" id="wiki-index">
+		alpha
+		----
+		home
+		dashboard
+		recent changes
+		wiki history
+		help
+		~edit page*
+		page history
+		new page*
+		----
+		<p>Alpha!</p>
+		<p>lorem ipsum dolor <a href="#wiki-page">HelloWorld</a> sit amet</p>
+		<p class="hint">these contents are read from <code>alpha/index</code></p>
+	</script>
+	<script type="text/html" id="wiki-page">
+		HelloWorld
+		----
+		home
+		dashboard
+		recent changes
+		wiki history
+		help
+		~edit page*
+		page history
+		new page*
+		----
+		<p>lorem ipsum dolor sit amet</p>
+		<p class="hint">these contents are read from <code>alpha/HelloWorld</code></p>
+	</script>
+	<script type="text/html" id="help">
+		help
+		----
+		home
+		dashboard
+		recent changes
+		wiki history
+		!help
+		~edit page*
+		page history
+		new page*
+		----
+		<p>lorem ipsum dolor sit amet</p>
+		<p class="hint">these contents are read from <code>meta/help</code></p>
+	</script>
+	<script type="text/html" id="error">
+		help
+		----
+		!home
+		dashboard*
+		recent changes
+		help
+		----
+		<p>error: page not found</p>
+	</script>
+
+	<script src="../tiddlywebplugins/bfw/assets/jquery.js"></script>
+	<script src="mocker.js"></script>
 </body>
 
 </html>
